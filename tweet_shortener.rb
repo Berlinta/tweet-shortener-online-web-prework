@@ -14,32 +14,22 @@ word = {
 end
 
 def word_substituter(tweet)
-  tweet.split(" ").map do |word|
-      if dictionary.keys.include?(word.downcase)
-        word = dictionary[word.downcase]
-      else
-        word
+  shortened = tweet.split.collect do |word|
+    if dictionary.keys.include?(word.downcase)
+      word = dictionary[word.downcase]
+    else word
     end
-  end.join(" ")
+  end
+  shortened.join(" ")
 end
 
-def bulk_tweet_shortener(tweet)
-  tweet.map do |phrase|
-    puts word_substituter(phrase)
+def bulk_tweet_shortener(tweets)
+  tweets.each do |tweet|
+    puts word_substituter(tweet)
   end
 end
-  
+
 def selective_tweet_shortener(tweet)
-  tweet.split(" ").map do |phrase|
-    if phrase.length > 140
-      word_substituter(phrase)
-      elsif phrase.length <= 140
-      phrase
-    end
-  end
-end
-
-def def selective_tweet_shortener(tweet)
   if tweet.length > 140
     word_substituter(tweet)
   else
