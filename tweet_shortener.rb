@@ -23,7 +23,7 @@ def word_substituter(tweet)
   short.join(" ")
 end
 
-def bulk_tweet_shortener(tweets)
+def bulk_tweet_shortener(tweet)
   tweets.each do |tweet|
     puts word_substituter(tweet)
   end
@@ -37,7 +37,7 @@ def selective_tweet_shortener(tweet)
   end
 end
 
-def shortened_tweet_truncator(tweet_three)
+def shortened_tweet_truncator(tweet)
 
 
 
