@@ -29,5 +29,7 @@ def bulk_tweet_shortener(tweet)
   end
 end
   
-def selective_tweet_shortener(tweet_one)
+def selective_tweet_shortener(tweet)
+  tweet.split(" ") do |phrase|
+    if phrase
   
